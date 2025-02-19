@@ -179,7 +179,7 @@ Write a function to find **the second largest** number in a given list.
 
 ```python
 
-  def second_largest(original_list):
+def second_largest(original_list):
     return sorted(original_list)[-2]
 
 second_largest([7,2,0,10,5,14])
