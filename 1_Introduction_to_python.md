@@ -166,8 +166,24 @@ isprime(10)
 ### **2. String Manipulation**
 Write a function that takes a string as input and returns the string in **reverse order**, preserving spaces.
 
+```python
+
+def revese_string(original_string):
+    return original_string[::-1]
+
+revese_string('Hi How are you?')
+```
+
 ### **3. List Processing**
 Write a function to find **the second largest** number in a given list.
+
+```python
+
+  def second_largest(original_list):
+    return sorted(original_list)[-2]
+
+second_largest([7,2,0,10,5,14])
+```
 
 ### **4. Dictionary Operations**
 Create a Python function that takes a dictionary and returns a new dictionary with **keys and values swapped**.
