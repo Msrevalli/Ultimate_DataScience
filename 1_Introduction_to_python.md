@@ -149,10 +149,19 @@ print(squares)  # [1, 4, 9, 16, 25]
 ---
 
 ## **10 Intermediate Python Practice Questions**
-Try solving these to strengthen your understanding!
+
 
 ### **1. Number Operations**
 Write a function to determine whether a given number is **prime**.
+```python
+def isprime(n):
+    for i in range(2,(n//2)+1):
+        if n%i==0:
+            return False
+    return True
+
+isprime(10)
+```
 
 ### **2. String Manipulation**
 Write a function that takes a string as input and returns the string in **reverse order**, preserving spaces.
