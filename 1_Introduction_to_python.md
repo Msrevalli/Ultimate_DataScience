@@ -200,22 +200,64 @@ value_key_dict({1:'a',2:'b'})
 
 ### **5. Set Operations**
 Write a function that returns the intersection, union, and difference between two sets.
-
+```python
+def set_operations(set1,set2):
+    print(f'set1^set2 : {set1.intersection(set2)}')
+    print(f'set1Uset2 : {set1.union(set2)}')
+    print(f'set1-set2 : {set1.difference(set2)}')
+a={1,2,3,4,5}
+b={4,2,9,0,10}
+set_operations(a,b)
+```
 ### **6. Tuple Manipulation**
 Given a list of tuples where each tuple contains a student's name and score, sort the list in **descending order** by score.
 
 ```python
 students = [("Alice", 85), ("Bob", 78), ("Charlie", 92)]
+
+def tuple_descending_order(original_tuple):
+    return sorted(original_tuple,key=lambda x:x[1],reverse=True)
+
+tuple_descending_order(students)
 ```
 
 ### **7. List Comprehension**
 Generate a list of **all numbers from 1 to 100** that are divisible by both 3 and 5.
-
+```python
+[i for i in range(101) if i%5==0 and i%3==0]
+```
 ### **8. Control Flow Challenge**
 Write a program to generate the **Fibonacci series up to `n`** using a while loop.
+```python
+def fib_gene(n):
+    fib_series=[0,1]
+
+    while(fib_series[-1]+fib_series[-2]<=n):
+        fib_series.append(fib_series[-1]+fib_series[-2])
+
+    return fib_series
+
+fib_gene(10)
+
 
 ### **9. File Handling**
 Write a Python script that reads a file and counts the **occurrences of each word**.
+```python
+def file_word_count(file_path):
+    with open(file_path,'r') as f:
+        lines=f.read()
+        words={}
+        for word in lines.split():
+            if word in words:
+                words[word]+=1
+            else:
+                words[word]=1
+
+    return words
+
+
+file_word_count('sample.txt')
+```
 
 ### **10. Nested Loops**
 Write a program to print the following pattern:
@@ -226,4 +268,9 @@ Write a program to print the following pattern:
 1 2 3 4  
 1 2 3 4 5  
 ```
-
+```python
+for i in range(1,6):
+    for j in range(1,i+1):
+        print(j,end=' ')
+    print('\n')
+```
