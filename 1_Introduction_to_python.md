@@ -187,6 +187,16 @@ second_largest([7,2,0,10,5,14])
 
 ### **4. Dictionary Operations**
 Create a Python function that takes a dictionary and returns a new dictionary with **keys and values swapped**.
+```python
+def value_key_dict(key_value_dict):
+    value_key={}
+    for key,value in key_value_dict.items():
+        value_key[value]=key
+
+    return value_key
+
+value_key_dict({1:'a',2:'b'})
+```
 
 ### **5. Set Operations**
 Write a function that returns the intersection, union, and difference between two sets.
