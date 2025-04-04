@@ -141,6 +141,33 @@ Write a function that finds the **largest contiguous subarray sum** in a given l
 arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 # Output: 6  (Subarray: [4, -1, 2, 1])
 ```
+```python
+def max_subarray_sum(arr):
+    max_sum = float('-inf')  # Initialize max_sum to the smallest possible value
+    current_sum = 0
+    
+    start = end = s = 0  # Variables to track subarray indices
+
+    for i in range(len(arr)):
+        current_sum += arr[i]
+
+        if current_sum > max_sum:
+            max_sum = current_sum
+            start = s
+            end = i
+
+        if current_sum < 0:
+            current_sum = 0
+            s = i + 1  # Move the start index for the next potential subarray
+
+    return max_sum, arr[start:end + 1]  # Return max sum and subarray
+
+# Example usage
+arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+result, subarray = max_subarray_sum(arr)
+print("Max Sum:", result)
+print("Subarray:", subarray)
+```
 
 ---
 
@@ -150,6 +177,14 @@ Write a function that **merges two sorted tuples** into a single sorted tuple.
 t1 = (1, 4, 6)
 t2 = (2, 3, 5)
 # Output: (1, 2, 3, 4, 5, 6)
+```
+```python
+def merge(t1,t2):
+    return tuple(list(t1)+(list(t2)))
+
+t1 = (1, 4, 6)
+t2 = (2, 3, 5)
+print(merge(t1,t2))
 ```
 
 ---
@@ -162,7 +197,11 @@ A = {1, 3, 5, 7}
 B = {3, 7, 9, 11}
 # Output: {1, 5, 9, 11}
 ```
-
+```python
+A = {1, 3, 5, 7}
+B = {3, 7, 9, 11}
+print(A^B)
+```
 ---
 
 ### **4. Dictionary Filtering**
